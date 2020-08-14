@@ -30,3 +30,18 @@
 - 각 테스트 모듈에서는 공통적으로 Appliance를 사용하기 위해 Tv.js, Audio.js, lamp.js, conditioner.js, security.js 모듈을 require한다.
 - 모든 Service 모듈도 require한다.
 - Home01.js는 비동기적인 js의 기본 특징을 사용한 코드이고, Home02.js는 콜백 함수와 setTimeout을 사용하여 비동기를 구현한 코드이다.
+
+### 실행 결과
+- Home01.js
+
+![image](https://user-images.githubusercontent.com/39904216/90219808-cfdf9b80-de41-11ea-85d5-7038839f3b5e.png)
+- Home02.js
+  - 순서대로 goWork, comehome, gosleep, wakeup, showall을 실행한 결과이다.
+  - 각 모듈에서는 setTimeout을 사용하여 콜백 함수를 호출한다.
+  - 출력 결과를 통해 콜백 함수가 호출되기 전에 다른 모듈들이 실행되는 것을 확인할 수 있다.
+  - 메인 실행 코드인 Home02.js에서 콜백 함수 선언 후 "사용중"이라는 출력 구문을 선언했지만, 코드가 비동기적으로 실행되기 때문에 콜백이 끝나기 전에 출력되는 것을 볼 수 있다.
+  - 모든 모듈이 실행된 후 각 모듈의 함수가 종료되었다는 구문이 출력된다.
+  
+![image](https://user-images.githubusercontent.com/39904216/90219951-2c42bb00-de42-11ea-9c90-2dec8691428c.png)
+
+![image](https://user-images.githubusercontent.com/39904216/90220712-b0e20900-de43-11ea-8872-618e1617edc1.png)
